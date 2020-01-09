@@ -1,4 +1,5 @@
 __psycahce__
 .DS_Store
+.vs
 *.mbx
 *.MBX
