@@ -12,8 +12,8 @@
 # Note : Sample is only for MapInfo Pro 64 bit v17.0.3 or greater.
 
 import ptvsd
-ptvsd.enable_attach()
-ptvsd.wait_for_attach()
+# ptvsd.enable_attach()
+# ptvsd.wait_for_attach()
 
 import sys
 import os
