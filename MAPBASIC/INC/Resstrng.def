@@ -1,0 +1,14 @@
+
+' Public functions
+Declare Function GetResourceString(ByVal iResId As Integer, strResStrings() As String, iNumResStrings As Integer, bResStringsLoaded As Logical) As String
+
+Declare Function GetResString(ByVal iResId As Integer) As String
+
+Declare Function GetUxResString(ByVal iResId As Integer) As String
+
+' Prototypes
+Declare Function LoadResourceStrings(ByVal FileName As String, strResStrings() As String, iNumResStrings As Integer, bResStringsLoaded As Logical ) As Logical
+
+Declare Function LoadUxStrings(ByVal FileName As String) As Logical
+
+Declare Function LoadStrings(ByVal FileName As String) As Logical

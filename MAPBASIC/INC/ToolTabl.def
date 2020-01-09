@@ -1,0 +1,71 @@
+'Declarations for ToolTabl functionality in MapBasic
+
+' Constants -- Note, all include +1, as per the tooltabl.h declaration
+Define TOOLAPP_ID_LEN		33
+Define TOOLAPP_TITLE_LEN	129
+Define TOOLAPP_DESC_LEN		257
+Define TOOLAPP_IMAGE_LEN	261
+Define TOOLAPP_LOC_LEN		261
+Define TOOLAPP_OWNER_LEN	33
+
+' Structure for ToolTabl interface
+TYPE TOOLAPP_INFO
+	Id		as String*TOOLAPP_ID_LEN
+	Title		as String*TOOLAPP_TITLE_LEN
+	Desc		as String*TOOLAPP_DESC_LEN
+	ImageUri	as String*TOOLAPP_IMAGE_LEN
+	Location	as String*TOOLAPP_LOC_LEN
+	Owner		as String*TOOLAPP_OWNER_LEN
+	AutoLoad	as Logical
+END TYPE
+
+'Initialize registry access for ToolTabl
+Declare Function ToolTableInit Lib "TOOLTABL.dll" as Integer
+
+'Uninitialize registry access for ToolTabl
+Declare Function ToolTableUninit Lib "TOOLTABL.dll" as Integer
+
+'Get count of registered entries (numitems)
+Declare Function ToolTableCount Lib "TOOLTABL.dll" (numitems as Integer) as Integer
+
+' Fetch table info for a specific entry (by enumerated id)
+Declare Function ToolTableEnum Lib "TOOLTABL.dll" (toolAppInfo As TOOLAPP_INFO, ByVal index as Integer) as Integer
+Declare Function ToolTableEnumW Lib "TOOLTABL.dll" WideChars (toolAppInfo As TOOLAPP_INFO, ByVal index as Integer) as Integer
+
+' Add a tool to the registered list
+Declare Function ToolTableItemAdd Lib "TOOLTABL.dll" (toolAppInfo As TOOLAPP_INFO) as Integer
+Declare Function ToolTableItemAddW Lib "TOOLTABL.dll" WideChars (toolAppInfo As TOOLAPP_INFO) as Integer
+
+' Modify an existing registered tool entry
+Declare Function ToolTableItemUpdate Lib "TOOLTABL.dll" (toolAppInfo As TOOLAPP_INFO) as Integer
+Declare Function ToolTableItemUpdateW Lib "TOOLTABL.dll" WideChars (toolAppInfo As TOOLAPP_INFO) as Integer
+
+' Remove a registered entry
+Declare Function ToolTableItemRemove Lib "TOOLTABL.dll" (toolAppInfo As TOOLAPP_INFO) as Integer
+Declare Function ToolTableItemRemoveW Lib "TOOLTABL.dll" WideChars (toolAppInfo As TOOLAPP_INFO) as Integer
+
+' Register Tool (With Image URI)
+Declare Function RegisterToolWithImageUri Lib "TOOLTABL.dll" (ByVal sTitle As String, ByVal sDesc As String, ByVal sImageUri As String, ByVal sLocation As String,
+ByVal sOwner As String, ByVal sAutoload As Logical) As Integer
+
+Declare Function RegisterToolWithImageUriW Lib "TOOLTABL.dll" WideChars (ByVal sTitle As String, ByVal sDesc As String, ByVal sImageUri As String, ByVal sLocation As String,
+ByVal sOwner As String, ByVal sAutoload As Logical) As Integer
+
+' Register Tool
+Declare Function RegisterTool Lib "TOOLTABL.dll" (ByVal sTitle As String, ByVal sDesc As String, ByVal sLocation As String,
+ByVal sOwner As String, ByVal sAutoload As Logical) As Integer
+
+Declare Function RegisterToolW Lib "TOOLTABL.dll" WideChars (ByVal sTitle As String, ByVal sDesc As String, ByVal sLocation As String,
+ByVal sOwner As String, ByVal sAutoload As Logical) As Integer
+
+' Unregister tool by location
+Declare Function UnregisterTool Lib "TOOLTABL.dll" (ByVal sLocation As String) as Integer
+Declare Function UnregisterToolW Lib "TOOLTABL.dll" WideChars (ByVal sLocation As String) as Integer
+
+' Unregister all tools by owner
+Declare Function UnregisterAllByOwner Lib "TOOLTABL.dll" (ByVal sOwner As String) as Integer
+Declare Function UnregisterAllByOwnerW Lib "TOOLTABL.dll" WideChars (ByVal sOwner As String) as Integer
+
+' Unregister all tools, regardless of owner (!)
+Declare Function UnregisterAll Lib "TOOLTABL.dll" as Integer
+

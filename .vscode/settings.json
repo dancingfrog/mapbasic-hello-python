@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Quiet Light",
+    "python.autoComplete.extraPaths": [
+        "C:\\Program Files\\MapInfo\\Professional",
+        "py_addin_util"
+    ]
+}

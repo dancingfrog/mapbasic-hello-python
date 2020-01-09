@@ -1,0 +1,174 @@
+'**************************************************************************************
+'*
+'*  Load and serve resource strings from ASCII text file
+'*
+'* Updated 4/3/2001 to specify SystemInfo(SYS_INFO_CHARSET) on Open File
+'*
+'**************************************************************************************
+Include "MapBasic.def"
+Include "..\Inc\ResStrng.def"
+
+Dim g_strResStrings() As String
+Dim g_iNumResStrings As Integer
+Dim g_bResStringsLoaded As Logical
+
+Dim g_strUxResStrings() As String 
+Dim g_iNumUxResStrings As Integer 
+Dim g_bUxResStringsLoaded As Logical
+
+
+
+'**************************************************************************************
+'* Load the strings from the specified resource file.
+'**************************************************************************************
+Function LoadResourceStrings(ByVal FileName As String, strResStrings() As String, iNumResStrings As Integer, bResStringsLoaded As Logical ) As Logical
+  Dim Buffer, Buffer2, Buffer3 As String
+  Dim PositionOfSpace, PositionOfTrailingQuote, StringNumber, StringCount As Integer
+  Dim intPos, CurrentPos as Integer
+  Dim CommentStartPos as Integer
+  Dim FoundTrail as Logical
+  
+  OnError Goto ErrHandler
+  
+  FoundTrail = false
+  Open File FileName For Input As #1 CharSet SystemInfo(SYS_INFO_CHARSET)
+  StringCount = 0
+  Line Input #1, Buffer
+  Do While Not EOF(1)  
+    StringNumber = Val(Buffer)
+    If StringNumber > 0 Then
+      'Find the position of the first space. This will be between the string number and the string.
+      PositionOfSpace = InStr(1, Buffer, " ")
+	  CommentStartPos = InStr(1, Buffer, "/*")
+      If PositionOfSpace Then
+		Buffer = Mid$(Buffer, PositionOfSpace + 2, 255)
+		'Need to find the trailing double quote. Here we can strings which itself have double quotes in it.
+		'Double quotes in mapbasic use a double quote as the escape character.
+		intPos = 0
+		do while FoundTrail = false
+			CurrentPos = InStr(intPos + 1, Buffer, """")
+			If CurrentPos = 0 Then
+				Exit Do
+			End If
+			If CommentStartPos <> 0 Then
+				If CurrentPos > CommentStartPos Then
+					Exit Do
+				End If
+			End If
+			IntPos = CurrentPos
+		Loop
+		PositionOfTrailingQuote = intPos
+        If intPos <> 0 Then
+			Buffer = Mid$(Buffer, 1, PositionOfTrailingQuote - 1)
+		End If
+      End If
+      If StringNumber > UBound(strResStrings) Then
+        ReDim strResStrings(StringNumber)
+      End If
+      strResStrings(StringNumber) = Buffer
+    End If
+    If Not EOF(1) Then 
+      StringCount = StringCount + 1 
+    End If
+	Line Input #1, Buffer
+  Loop 
+  Close File #1
+  iNumResStrings = StringCount
+  bResStringsLoaded = TRUE
+  LoadResourceStrings = TRUE
+
+ExitFunction:
+  OnError Goto 0
+  Exit Function
+
+ErrHandler:
+  Note Error$()
+  Resume ExitFunction
+
+End Function
+
+
+'**************************************************************************************
+'* Get a string from the specified string resource file.
+'**************************************************************************************
+Function GetResourceString(ByVal iResId As Integer, strResStrings() As String, iNumResStrings As Integer, bResStringsLoaded As Logical) As String
+
+  OnError Goto ErrHandler
+
+  ' If we haven't already loaded the strings from disk
+  If Not bResStringsLoaded Then
+    Goto ExitFunction
+  End If
+
+  ' Check the string resource id
+  If iResId < 1 Or iResId > iNumResStrings Then
+    Note "Invalid String Resource Requested"
+    Goto ExitFunction
+  End If
+
+  ' Return the string to the caller
+  GetResourceString = strResStrings(iResId)
+
+ExitFunction:
+  OnError Goto 0
+  Exit Function
+
+ErrHandler:
+  Note Error$()
+  Resume ExitFunction
+
+End Function
+
+'**************************************************************************************
+'* Load the UX Resource strings from the string resource file.
+'**************************************************************************************
+Function LoadUxStrings(ByVal FileName As String) As Logical
+	Dim folderName as String
+	folderName = PathToDirectory$(FileName)
+	Dim strFileName As String
+	strFileName = PathToFileName$(FileName)
+	Dim cultureCode As String
+	cultureCode = SystemInfo(SYS_INFO_CULTURE)
+	Dim strLocaleFilePath as String
+	strLocaleFilePath = folderName + cultureCode + Chr$(92) + strFileName
+	if(FileExists(strLocaleFilePath)) Then
+	'First try to load from the culturecode specific folder first
+	LoadUxStrings =	LoadResourceStrings(strLocaleFilePath,g_strUxResStrings,g_iNumUxResStrings,g_bUxResStringsLoaded)
+	Else
+	LoadUxStrings =	LoadResourceStrings(FileName,g_strUxResStrings,g_iNumUxResStrings,g_bUxResStringsLoaded)
+	End If
+End Function
+
+'**************************************************************************************
+'* Load the strings from the string resource file.
+'**************************************************************************************
+Function LoadStrings(ByVal FileName As String) As Logical
+	Dim folderName as String
+	folderName = PathToDirectory$(FileName)
+	Dim strFileName As String
+	strFileName = PathToFileName$(FileName)
+	Dim cultureCode As String
+	cultureCode = SystemInfo(SYS_INFO_CULTURE)
+	Dim strLocaleFilePath as String
+	strLocaleFilePath = folderName + cultureCode + Chr$(92) + strFileName
+	if(FileExists(strLocaleFilePath)) Then
+	'First try to load from the culturecode specific folder first
+	LoadStrings = LoadResourceStrings(strLocaleFilePath,g_strResStrings,g_iNumResStrings,g_bResStringsLoaded)
+	Else
+	LoadStrings = LoadResourceStrings(FileName,g_strResStrings,g_iNumResStrings,g_bResStringsLoaded)
+	End If
+End Function
+
+'**************************************************************************************
+'* Get a string from the string resource file.
+'**************************************************************************************
+Function GetResString(ByVal iResId As Integer) As String
+	GetResString =  GetResourceString(iResId,g_strResStrings,g_iNumResStrings,g_bResStringsLoaded)
+End Function
+
+'**************************************************************************************
+'* Get a string from the UX string resource file.
+'**************************************************************************************
+Function GetUxResString(ByVal iResId As Integer) As String
+	GetUxResString = GetResourceString(iResId,g_strUxResStrings,g_iNumUxResStrings,g_bUxResStringsLoaded)
+End Function

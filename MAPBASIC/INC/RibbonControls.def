@@ -1,0 +1,1032 @@
+'#########################################################################
+' MapInfo version 17.0.3 Ribbon Interface control defines.
+'Defines include control names taken from Dump Object Model feature in ProSampleAddin provided with MapBasic
+'Ribbon Tabs, Tab Groups, Contextual tabs
+'Names prefaced with TAB_ are Tab names, that have corresponding group name control defines
+'Names prefaced with CTAB are contextual Tabs
+'Split and DropDown buttons have underlying controls prefaced with MNU_DROPDOWN
+'Gallery controls, items and menus prefaced with GALLERY
+'Names prefaced with CBO are comboboxes which are a custom control
+'Names prefaced with CHK are checkboxes which are a custom control
+'Names prefaced with STK are Stack Panels which typically contain ribbon button or other controls.
+'************************************************************************
+'Some Addins such as MapCAD, Layout Templates, MIRaster, and Advanced Pack will load their own controls into Ribbon
+'and can change some of the default controls visible to users.
+'These addin defines are not included.
+'Use ProSampleAddin Dump Object Model Feature to see these control names when these addins are loaded.
+'#########################################################################
+
+'Defines for standard Ribbon TAB and Contextual Tab (CTAB) names
+DEFINE TAB_PRO								"Backstage"
+DEFINE TAB_HOME								"TabHome"
+DEFINE TAB_MAP								"TabMap"
+DEFINE TAB_TABLE							"TabTable"
+DEFINE TAB_SPATIAL							"TabSpatial"
+DEFINE TAB_LAYOUT							"TabLayout"
+DEFINE TAB_LEGACY							"TabLegacy"
+
+'Contextual Tab Groups and Context Tabs
+DEFINE CTAB_GRP_LAYER_TOOLS					"LayerTools"
+DEFINE CTAB_THEME							"TabTheme"
+DEFINE CTAB_LAYER_STYLES					"TabLayerStyle"
+DEFINE CTAB_LAYER_LABELS					"TabLayerLabeling"
+DEFINE CTAB_GRP_LEGEND_TOOLS				"LegendTools"
+DEFINE CTAB_LEGEND							"TabLegend"
+DEFINE CTAB_GRP_GRIDLINE 					"GridLineContextTabGroup"
+DEFINE CTAB_GRIDLINES						"TabGridlines"
+
+'Defines for standard Ribbon Tab Home groups
+'Home Tab Groups
+DEFINE TAB_HOME_FILE_GRP					"HomeFile"
+DEFINE TAB_HOME_CLIP_GRP					"HomeClipboard"
+DEFINE TAB_HOME_WINDOW_GRP					"HomeDocumentWindow"
+DEFINE TAB_HOME_RECOVER_GRP					"RecoverWindowsRibbonBar"
+DEFINE TAB_HOME_OUTPUT_GRP					"HomeOutput"
+DEFINE TAB_HOME_TOOLS_GRP					"HomeTools"
+
+'Map Context Menu
+DEFINE MNU_CONTEXT_MAP						"Mapper ContextMenu"
+
+'###################################################################
+'DEFINES FOR CONTROL NAMES IN EACH RIBBON TAB AND GALLERY
+'##################################################################
+
+'Home Tab Open, Save, and clipboard button controls
+DEFINE BTN_HOME_FILE_OPEN_SPLIT				"HomeFileOpenGallerySplitButton"
+DEFINE MNU_DROPDOWN_GRP_WOR_TABLE			"WorkspaceTable"
+DEFINE BTN_OPEN_WORKSPACE					"FileOpenWorkspaceButton"
+DEFINE BTN_FILE_ADD_WORKSPACE				"FileAddWorkspaceButton"
+DEFINE BTN_FILE_OPEN_TABLE					"FileOpenTableButton"
+DEFINE BTN_FILE_IMPORT						"FileImportButton"
+DEFINE BTN_FILE_UNIVERSAL					"FileUniversalDataButton"
+DEFINE BTN_FILE_DBMS						"FileDatabaseTableButton"
+DEFINE BTN_RUN_MAPBASIC						"RunMapBasicButton"
+DEFINE MNU_DROPDOWN_GRP_BASEMAPS			"BaseMaps"
+DEFINE BTN_ADD_BASEMAP_AERIAL				"AddBasemapAerialButton"
+DEFINE BTN_ADD_BASEMAP_ROADS				"AddBasemapRoadsButton"
+DEFINE BTN_ADD_BASEMAP_HYBRID				"AddBasemapHybridButton"
+DEFINE BTN_ADD_BASEMAP_GEOMAP_BRONZE		"AddBasemapGeoMapBronze"
+DEFINE BTN_ADD_BASEMAP_GEOMAP_STEEL			"AddBasemapGeoMapSteel"
+DEFINE BTN_ADD_BASEMAP_GEOMAP_IRON			"AddGeoMapIronButton"
+
+DEFINE MNU_DROPDOWN_GRP_WEB					"WebServices"
+DEFINE BTN_OPEN_WMS							"OpenWmsButton"
+DEFINE BTN_OPEN_WFS							"OpenWfsButton"
+DEFINE BTN_OPEN_WMTS						"OpenWmtsButton"
+
+DEFINE MNU_DROPDOWN_GRP_CONN				"OpenConnections"
+DEFINE MNU_DROPDOWN_GRP_RECENT				"RecentFiles"
+
+'Save Workspace Split control
+DEFINE BTN_OPEN_TABLE						"OpenTableButton"
+DEFINE BTN_HOME_SAVEWOR_SPLIT				"HomeSaveWorkspaceSplitButton"
+DEFINE MNU_DROPDOWN_GRP_SAVE_WOR			"SaveWorkspaceDownMenuGroup"
+DEFINE BTN_SAVE_WOR							"SaveWorkspaceButton"
+DEFINE BTN_SAVE_WOR_AS						"SaveWorkspaceAsButton"
+
+'Save Split control
+DEFINE BTN_HOME_SAVETAB_SPLIT				"HomeSaveSplitButton"
+DEFINE MNU_DROPDOWN_GRP_SAVE_TAB			"SaveDropDownMenuGroup"
+DEFINE BTN_SAVE_TABLE						"SaveTableButton"
+DEFINE BTN_SAVE_COPY_AS						"SaveCopyAsButton"
+
+'Save Split control
+DEFINE BTN_HOME_CLOSE_SPLIT					"CloseSplitButton"
+DEFINE MNU_DROPDOWN_GRP_CLOSE				"CloseDropDownMenuGroup"
+DEFINE BTN_CLOSE_CONNECTION					"CloseConnectionButton"
+DEFINE BTN_CLOSE_TABLE						"CloseTableButton"
+DEFINE BTN_CLOSE_ALL						"CloseAllButton"
+
+'Clipboard Group
+DEFINE BTN_CLIP_COPY						"CopyButton"
+DEFINE BTN_CLIP_PASTE						"PasteButton"
+DEFINE BTN_CLIP_CUT							"CutButton"
+DEFINE BTN_CLIP_UNDO						"UndoButton"
+
+'#########################################################################################
+'Home Tab Window Group Gallery Item defines
+'#########################################################################################
+DEFINE HOME_NEW_DOC_WINDOW_GALLERY			"NewDocumentWindowGallery"
+DEFINE HOME_TOOL_WINDOW_GALLERY				"ToolWindowGallery"
+DEFINE NEW_DOC_WINDOW_GALLERY_GRP			"NewDocumentWindows"
+DEFINE GALLERY_ITEM_NEW_MAP					"NewMapGalleryItem"
+DEFINE GALLERY_ITEM_NEW_BROWSER				"MapBrowserGalleryItem"
+DEFINE GALLERY_ITEM_NEW_LAYOUT				"LayoutWindowGalleryItem"
+DEFINE GALLERY_ITEM_NEW_LEGEND				"LegendWindowGalleryItem"
+DEFINE GALLERY_ITEM_NEW_3D					"ThreeDWindowGalleryItem"
+DEFINE GALLERY_ITEM_NEW_PRISM				"PrismWindowButtonGalleryItem"
+DEFINE GALLERY_ITEM_NEW_REDIST				"RedistrictWindowGalleryItem"
+
+DEFINE WND_MENU_CMDS_GRP					"WindowMenuCommands"
+DEFINE WND_GALLERY_MNU_CLONE				"CloneWindowMenuItem"
+DEFINE WND_GALLERY_MNU_REDRAW				"RedrawWindowMenuItem"
+DEFINE WND_GALLERY_MNU_STATUSBAR			"ToggleStatusBarVisibilityMenuItem"
+
+DEFINE TOOL_WINDOWS_GALLERY_GRP				"ToolWindows"
+DEFINE GALLERY_ITEM_TOOL_INFO				"InfoWindowGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_WOR_EXP			"WorkspaceExplorerButtonGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_MAPBASIC			"MapBasicWindowButtonGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_RULER				"RulerWindowGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_MESSAGE			"MessageWindowGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_TASK_MGR			"TaskManagerButtonGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_STATS				"StatisticsWindowGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_MOVETO				"MoveToWindowGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_THEME				"FloatingThemeLegendWindowGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_TOOLMGR			"ToolsButtonGalleryItem"
+
+DEFINE EXPLORER_SUB_WINDOWS_GALLERY_GRP		"ExplorerSubWindows"
+DEFINE GALLERY_ITEM_TOOL_CONN_LIST			"ConnectionListButtonGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_TABLELIST			"TableListButtonGalleryItem"
+DEFINE GALLERY_ITEM_TOOL_WINDOWLIST			"WindowsButtonGalleryItem"
+
+'Home Tab Recover Windows
+DEFINE BTN_RECOVER_WINDOWS					"RecoverOffscreenWindowsMenuItem"
+
+'Home Tab Window Output
+DEFINE BTN_OUTPUT_PRINT						"PrintButton"
+DEFINE BTN_OUTPUT_PDF						"PdfButton"
+DEFINE BTN_OUTPUT_EXPORT					"ExportImgButton"
+DEFINE BTN_OUTPUT_PAGESETUP					"PageSetupButton"
+'Home tab Tools
+DEFINE BTN_TOOLS_TOOL_EXT					"ToolsDropDownButton"
+
+'#########################################################################################
+'Table Tab controls
+'#########################################################################################
+
+'Table Tab Ribbon Groups
+DEFINE TAB_TABLE_DATA_GRP					"TableData"
+DEFINE TAB_TABLE_SELECTION_GRP				"TableSelection"
+DEFINE TAB_TABLE_ADDEDIT_GRP				"TableAddEdit"
+DEFINE TAB_TABLE_BROWSER_GRP				"BrowserTools"
+DEFINE TAB_TABLE_SORT_GRP					"BrowserSortFilter"
+DEFINE TAB_TABLE_MAINT_GRP					"TableMaintenance"
+DEFINE TAB_TABLE_CALC_GRP					"CalculateTools"
+
+'Table Tab Data group defines
+DEFINE BTN_TABLE_NEW_BROWSER				"NewBrowserButton"
+DEFINE BTN_TABLE_FILE_OPEN_SPLIT			"TableFileOpenGallerySplitButton"
+'other controls under BTN_TABLE_FILE_OPEN_SPLIT split button use same name as MNU_DROPDOWN_GRP_WOR_TABLE above
+DEFINE BTN_TABLE_SAVE_SPLIT					"TableSaveSplitButton"
+DEFINE MNU_DROPDOWN_GRP_TABLE_SAVE			"TableSaveDropDownMenuGroup"
+DEFINE BTN_TABLE_SAVE						"TableSaveButton"
+DEFINE BTN_TABLE_SAVE_QUERY					"SaveQueryButton"
+DEFINE BTN_TABLE_SAVE_COPYAS				"TableSaveCopyAsButton"
+DEFINE BTN_TABLE_REVERT						"RevertTableButton"
+DEFINE BTN_TABLE_CLOSE						"TableCloseButton"
+DEFINE BTN_TABLE_NEW						"NewTableButton"
+DEFINE BTN_TABLE_EXPORT						"ExportButton"
+DEFINE BTN_TABLE_UT							"UniversalTranslatorButton"
+
+'Table Tab Selection group defines
+DEFINE BTN_TABLE_SELECT						"SelectButton"
+DEFINE BTN_TABLE_SQL_SPLIT					"TableSqlSelectSplitButton"
+'These are same for Table and Map Tab
+'SQL Select DropDown control
+DEFINE MNU_DROPDOWN_GRP_SQL_QUERY			"SqlQueryDownMenuGroup"
+DEFINE BTN_TABLE_SQL_SELECT					"MapSelectionSqlSelectButton"
+DEFINE BTN_TABLE_SIMPLE_SELECT				"SqlQuerySelectButton"
+DEFINE BTN_TABLE_INVERT_SELECT				"SelectionInvertSelectButton"
+DEFINE BTN_TABLE_CLEAR_SELECT				"SelectionClearButton"
+
+DEFINE BTN_TABLE_MAP_FIND_SPLIT				"MapFindSplitButton"
+DEFINE MNU_DROPDOWN_GRP_MAP_FIND			"MapFindSplitButtonGroup"
+DEFINE BTN_TABLE_FIND_SELECTION				"FindSelectionButton"
+DEFINE BTN_TABLE_FIND_ADDRESS				"FindAddressButton"
+DEFINE BTN_TABLE_FIND_MARK					"FindAndMarkButton"
+
+'Table Tab AddEdit group defines
+DEFINE BTN_TABLE_UPDATE						"UpdateColumnButton"
+DEFINE BTN_TABLE_APPEND						"AppendRowButton"
+DEFINE BTN_TABLE_NEWROW						"AddNewRowButton"
+DEFINE BTN_TABLE_CLEAR_MAP					"TableClearMapObjectsButton"
+
+'Table Tab AddEdit Browser group defines
+DEFINE BTN_TABLE_INFO						"InfoToolButton"
+DEFINE BTN_TABLE_HOTLINK					"HotLinkButton"
+DEFINE BTN_TABLE_HOTLINK_OPTIONS			"HotLinkOptionsButton"
+DEFINE BTN_TABLE_PICKFIELDS					"PickFieldsButton"
+DEFINE BTN_TABLE_FONT						"BrowserFontButton"
+DEFINE BTN_TABLE_GRIDLINES					"ShowGridLinesToggleButton"
+
+'Table Tab Browser Sort Filter group defines
+'Browser Filter DropDown control
+DEFINE BTN_TABLE_FILTER_DROPDOWN			"FilterDropDown"
+DEFINE MNU_DROPDOWN_GRP_FILTER				"FilterDropDownMenuGroup"
+DEFINE BTN_TABLE_FILTER						"FilterButton"
+DEFINE BTN_TABLE_CLEAR_FILTER				"ClearFilterButton"
+
+'Browser Sort DropDown control
+DEFINE BTN_TABLE_SORT_DROPDOWN				"SortDropDown"
+DEFINE MNU_DROPDOWN_GRP_SORT				"SortDropDownMenuGroup"
+DEFINE BTN_TABLE_SORT_MULTI_COL				"MultiColumnSortButton"
+DEFINE BTN_TABLE_SORT_ASC					"SortAscendingButton"
+DEFINE BTN_TABLE_SORT_DESC					"SortDescendingButton"
+DEFINE BTN_TABLE_SORT_CLEAR					"ClearSortButton"
+DEFINE BTN_TABLE_SORT_CLEAR_ALL				"ClearAllSortButton"
+DEFINE BTN_TABLE_SORT_TOGGLE				"ToggleSortButton"
+DEFINE BTN_TABLE_SORT_REAPPLY				"ReApplySortButton"
+DEFINE BTN_TABLE_SORT_ADD2MAP				"AddtoMapButton"
+
+'Table Tab Maintenance group defines
+'Table DropDown control
+DEFINE BTN_TABLE_MAINT_DROPDOWN				"TableMaintenanceButton"
+DEFINE MNU_DROPDOWN_GRP_TABLE_MAINT			"TableSplitButtonDropDownMenuGroup"
+DEFINE BTN_TABLE_MAINT_MODIFY				"TableModifyStructureButton"
+'Advanced Pack tool loaded by default
+DEFINE BTN_TABLE_MAINT_ADV_PACK				"AdvancedPackTable"
+DEFINE BTN_TABLE_MAINT_PACK					"TablePackButton"
+DEFINE BTN_TABLE_MAINT_DELETE				"TableDeleteButton"
+DEFINE BTN_TABLE_MAINT_RENAME				"TableRenameButton"
+
+'Database DropDown control
+DEFINE BTN_TABLE_DBMS_DROPDOWN				"DatabaseMaintenanceButton"
+DEFINE MNU_DROPDOWN_GRP_TABLE_DBMS			"DatabaseSplitButtonDropDownMenuGroup"
+DEFINE BTN_TABLE_DBMS_MAPPABLE				"DatabaseMakeMappableButton"
+DEFINE BTN_TABLE_DBMS_CHANGE_SYMBOL			"DatabaseChangeTableSymbolButton"
+DEFINE BTN_TABLE_DBMS_UNLINK				"DatabaseUnlinkTableButton"
+DEFINE BTN_TABLE_DBMS_REFRESH				"DatabaseRefreshDbmsTableButton"
+DEFINE BTN_TABLE_DBMS_CREATE_ORACLE_WOR		"CreateOracleWorkspaceButton"
+DEFINE BTN_TABLE_DBMS_DELETE_ORACLE_WOR		"DeleteOracleWorkspaceButton"
+DEFINE BTN_TABLE_DBMS_MERGE_ORACLE_TABLE	"MergeOracleTableButton"
+DEFINE BTN_TABLE_DBMS_REFRESH_ORACLE_TABLE	"RefreshOracleTableButton"
+DEFINE BTN_TABLE_DBMS_ENABLE_ORACLE_VERS	"EnableOracleVersioningButton"
+DEFINE BTN_TABLE_DBMS_DISABLE_ORACLE_VERS	"DisableOracleVersioningButton"
+
+'Library DropDown control
+DEFINE BTN_TABLE_LIBRARY_DROPDOWN			"LibraryMaintenanceButton"
+DEFINE MNU_DROPDOWN_GRP_LIBRARY				"LibraryButtonDropDownMenuGroup"
+DEFINE BTN_TABLE_LIBRARY_ADD				"AddToLibraryButton"
+DEFINE BTN_TABLE_VIEW_EDIT_METADATA			"ViewEditMetadataButton"
+
+'Raster DropDown control
+DEFINE BTN_TABLE_RASTER_DROPDOWN			"RasterTableMaintenanceButton"
+DEFINE MNU_DROPDOWN_GRP_RASTER				"RasterTableButtonDropDownMenuGroup"
+DEFINE BTN_TABLE_RASTER_IMAGE_STYLE			"RasterImageStyleButton"
+DEFINE BTN_TABLE_RASTER_MODIFY_REG			"RasterRegStyleButton"
+DEFINE SEPARATOR_RASTER_TABLE				"SeparatorRasterTable"
+DEFINE BTN_TABLE_RASTER_ADD_CONTROL			"RasterAddControlPtsButton"
+
+'Web Services DropDown control
+DEFINE BTN_TABLE_WEBSVC_DROPDOWN			"WebServicesMaintenanceButton"
+DEFINE MNU_DROPDOWN_GRP_WEBSVC				"WebServicesButtonDropDownMenuGroup"
+DEFINE BTN_TABLE_WEBSVC_WFS_PROPS			"WfsPropertiesButton"
+DEFINE BTN_TABLE_WEBSVC_WFS_REFRESH			"WfsRefreshButton"
+DEFINE SEPARATOR_WEB_SERVICE				"SeparatorWebService"
+DEFINE BTN_TABLE_WEBSVC_WMS_PROPS			"WmsPropertiesButton"
+DEFINE BTN_TABLE_WEBSVC_WMTS_PROPS			"WmtsPropertiesButton"
+
+'Table Tab Calculate tools group defines
+DEFINE BTN_CALC_COL_STATS					"CalcColStatButton"
+
+'#########################################################################################
+'MAP TAB control defines
+'#########################################################################################
+'Map Tab Groups
+DEFINE TAB_MAP_FILE_GRP						"MapFile"
+DEFINE TAB_MAP_SELECTION_GRP				"MapSelection"
+DEFINE TAB_MAP_CREATE_BAR_GRP				"MapCreateBar"
+DEFINE TAB_MAP_NAVIGATE_GRP					"MapNavigate"
+DEFINE TAB_MAP_LABEL_GRP					"MapLabel"
+DEFINE TAB_MAP_OPTIONS_GRP					"MapOptions"
+
+'Map Tab File Group Defines
+DEFINE BTN_MAP_NEW_MAP						"NewMapButton"
+DEFINE BTN_MAP_FILE_OPEN_SPLIT				"MapFileOpenGallerySplitButton"
+
+'other controls under BTN_TABLE_FILE_OPEN_SPLIT split button use same name as Home & Table tab above
+
+DEFINE BTN_MAP_ADD_THEME					"MapAddThematicButton"
+DEFINE BTN_MAP_ADD_TO_MAP_SPLIT				"AddToMapSplitButton"
+DEFINE MNU_DROPDOWN_GRP_ADD_MAP				"AddToMapDropDownMenuGroup"
+DEFINE BTN_MAP_CREATE_LEGEND				"MapCreateLegendDesignerButton"
+DEFINE BTN_MAP_OPTIONS_GRIDLINES			"MapOptionsGridlinesButton"
+DEFINE BTN_MAP_CREATE_SCALEBAR				"CreateScaleBarButton"
+
+DEFINE BTN_MAP_COSMETIC_SPLIT				"CosmeticSplitButton"
+DEFINE MNU_DROPDOWN_GRP_COSMETIC			""
+DEFINE BTN_MAP_CLEAR_COSMETIC				"MapClearCosmeticButton"
+DEFINE BTN_MAP_SAVE_COSMETIC				"MapSaveCosmeticButton"
+
+'Map Tab Selection Group Defines
+'Select Split control
+DEFINE BTN_MAP_SELECT_TOOLS_SPLIT			"MapSelectionToolsSplitButton"
+DEFINE MNU_DROPDOWN_GRP_SELECTION			"SelectionDownMenuGroup"
+DEFINE BTN_MAP_SELECT_TOOLS_SELECT			"SelectButon"
+DEFINE BTN_MAP_SELECT_TOOLS_RADIUS			"RadiusSelectButton"
+DEFINE BTN_MAP_SELECT_TOOLS_MARQUEE			"MaqueeSelectButton"
+DEFINE BTN_MAP_SELECT_TOOLS_REGION			"RegionSelectButton"
+DEFINE BTN_MAP_SELECT_TOOLS_BOUNDARY 		"BoundarySelectButton"
+
+'Sql Select Split control
+DEFINE BTN_MAP_SQL_QUERY_SPLIT				"SqlQuerySplitButton"
+'Map Sql Select and Simple Select buttons use same defines as BTN_TABLE_SQL_SELECT and BTN_TABLE_SIMPLE_SELECT
+
+DEFINE BTN_MAP_SELECT_INVERT				"MapSelectionInvertSelectButton"
+DEFINE BTN_MAP_SELECT_CLEAR					"MapSelectionClearButton"
+DEFINE MNU_DROPDOWN_GRP_MAPSELECT			"MapSelectionDownMenuGroup"
+
+'These are same controls used in Spatial tab
+'Find Split control
+DEFINE BTN_MAP_FIND_SPLIT					"MapFindSplitButton"
+DEFINE BTN_MAP_FIND_SELECTION				"FindSelectionButton"
+DEFINE BTN_MAP_FIND_ADDRESS					"FindAddressButton"
+DEFINE BTN_MAP_FIND_MARK					"FindAndMarkButton"
+
+'Map Tab Create Group Defines
+DEFINE BTN_MAP_CREATE_INSERT_SPLIT			"MapCreateInsertSplitButton"
+DEFINE MNU_DROPDOWN_GRP_MAP_INSERT_PTS_TXT	"InsertPointsandTextMenuGroup"
+DEFINE BTN_MAP_INSERT_SYMBOL				"MapCreateInsertSymbolButton"
+DEFINE BTN_MAP_INSERT_TEXT					"MapCreateInsertTextButton"
+
+'Insert Split control
+DEFINE MNU_DROPDOWN_GRP_MAP_INSERT_LINES	"InsertLinesMenuGroup"
+DEFINE BTN_MAP_INSERT_LINE					"MapCreateInsertLineButton"
+DEFINE BTN_MAP_INSERT_POLYLINE				"MapCreateInsertPolylineButton"
+DEFINE BTN_MAP_INSERT_ARC					"MapCreateInsertArcButton"
+
+DEFINE MNU_DROPDOWN_GRP_MAP_INSERT_REGIONS	"InsertRegionsMenuGroup"
+DEFINE BTN_MAP_INSERT_POLYGON				"MapCreateInsertPolygonButton"
+DEFINE BTN_MAP_INSERT_ELLIPSE				"MapCreateInsertEllipseButton"
+DEFINE BTN_MAP_INSERT_RECTANGLE				"MapCreateInsertRectangleButton"
+DEFINE BTN_MAP_INSERT_ROUNDRECT				"MapCreateInsertRoundedRectangleButton"
+
+'Styles Split control
+DEFINE BTN_MAP_STYLES_SPLIT					"MapStylesSplitButton"
+DEFINE MNU_DROPDOWN_GRP_MAP_STYLES			"MapStylesMenuGroup"
+DEFINE BTN_MAP_STYLES_SYMBOL				"MapCreateSymbolStyleButton"
+DEFINE BTN_MAP_STYLES_LINE					"MapCreateLineStyleButton"
+DEFINE BTN_MAP_STYLES_REGION				"MapCreateRegionStyleButton"
+DEFINE BTN_MAP_STYLES_TEXT					"MapCreateTextStyleButton"
+
+'Map Tab Navigate Group Defines
+DEFINE BTN_MAP_PAN							"PanButton"
+DEFINE BTN_MAP_ZOOMIN						"ZoomInButton"
+DEFINE BTN_MAP_ZOOMOUT						"ZoomOutButton"
+
+'ZoomTo DropDown control
+DEFINE BTN_MAP_ZOOMTO_DROPDOWN				"ZoomToDropDownButton"
+DEFINE MNU_DROPDOWN_ZOOMTO_GRP				"ZoomToDropDownMenuGroup"
+DEFINE BTN_MAP_ZOOMTO_SELECTION_LAYER		"ZoomToSelectionLayerButton"
+DEFINE BTN_MAP_ZOOMTO_SELECTED_OBJS			"ZoomToSelectedObjectsButton"
+DEFINE BTN_MAP_ZOOMTO_LAYER					"ZoomToLayerButton"
+DEFINE BTN_MAP_ZOOMTO_ENTIRE_MAP			"ZoomToEntireMapButton"
+DEFINE BTN_MAP_ZOOMTO_NEAREST_TILE			"ZoomToNearestTileServerLevelButton"
+
+DEFINE BTN_MAP_PREVIOUS_VIEW				"PreviousViewButton"
+DEFINE BTN_MAP_MOVETO						"MoveMapToButton"
+DEFINE BTN_MAP_CHANGE_VIEW					"ChangeViewButton"
+
+'Map Tab Label Group Defines
+DEFINE BTN_MAP_LABEL_TOOL					"LabelToolButton"
+DEFINE BTN_MAP_LABEL_SELECTABLE				"SelectableLabelButton"
+DEFINE BTN_MAP_LABEL_CLEAR_CUSTOM			"ClearCustomLabelButton"
+DEFINE BTN_MAP_LABEL_PRIORITY				"LabelPriorityButton"
+
+'Map Tab Tools Options Defines
+DEFINE BTN_MAP_TOOLS_SPLIT					"MapToolsSplitButton"
+DEFINE MNU_DROPDOWN_MAP_TOOLS_GRP			""
+DEFINE BTN_MAP_RULER						"MeasureButton"
+DEFINE BTN_MAP_INFOTOOL						"InfoToolButton"
+DEFINE BTN_MAP_STATS						"StatsWindowButton"
+DEFINE BTN_MAP_HOTLINK						"HotLinkButton"
+DEFINE BTN_MAP_EXPLORER_CTRL				"MapExplorerControlButton"
+DEFINE BTN_MAP_REDRAW						"MapRedrawButton"
+
+DEFINE BTN_MAP_DISTRICTS_DROPDOWN			"MapAnalyzeRedistricterDropDown"
+DEFINE MNU_DROPDOWN_GRP_DISTRICTS			"MapAnalyzeRedistricterDropDownMenuGroup"
+DEFINE BTN_MAP_DISTRICTS_NEW				"NewRedistricterWindowButton"
+DEFINE BTN_MAP_DISTRICTS_SET_TARGET			"SetTargetButton"
+DEFINE BTN_MAP_DISTRICTS_ASSIGN				"AssignDistrictButton"
+DEFINE BTN_MAP_DISTRICTS_ADD				"AddDistrictButton"
+DEFINE SEPARATOR_REDISTIRCTER				"RedistrictorItemSeparator"
+DEFINE BTN_MAP_DISTRICTS_DELETE				"DeleteDistrictButton"
+DEFINE BTN_MAP_DISTRICTS_OPTIONS			"RedistricterOptionsButton"
+
+DEFINE BTN_MAP_OPTIONS						"MapOptionsButton"
+DEFINE BTN_MAP_HOTLINK_OPTIONS				"MapHotlinkOptionsButton"
+DEFINE BTN_MAP_DRAGMAP						"DragMapButton"
+DEFINE BTN_MAP_LOCK_SCALE					"LockScaleButton"
+
+'#########################################################################################
+'Spatial Tab Control defines
+'#########################################################################################
+'SPATIAL Tab Groups
+DEFINE TAB_SPATIAL_CLIPBOARD_GRP			"SpatialClipboardBar"
+DEFINE TAB_SPATIAL_SELECTION_GRP			"SpatialSelectionBar"
+DEFINE TAB_SPATIAL_EDIT_GRP					"SpatialEditBar"
+DEFINE TAB_SPATIAL_CREATE_GRP				"SpatialCreateBar"
+
+'Spatial Tab Clipboard Group Defines
+DEFINE BTN_SPATIAL_CLIP_COPY				"ClipboardCopyButton"
+DEFINE BTN_SPATIAL_CLIP_PASTE				"ClipboardPasteButton"
+DEFINE BTN_SPATIAL_CLIP_CUT					"ClipboardCutButton"
+DEFINE BTN_SPATIAL_CLIP_UNDO				"ClipboardUndoButton"
+
+'Spatial Tab Selection Group Defines
+DEFINE BTN_SPATIAL_SELECT_TOOLS_SPLIT		"SpatialSelectionToolsSplitButton"
+
+'Same as Map Tab: MNU_DROPDOWN_GRP_MAP_SELECT	SelectionDownMenuGroup
+
+DEFINE BTN_SPATIAL_SELECT					"SelectButton"
+DEFINE BTN_SPATIAL_SELECT_RADIUS			"RadiusSelectButton"
+DEFINE BTN_SPATIAL_SELECT_MARQUEE			"MaqueeSelectButton"
+DEFINE BTN_SPATIAL_SELECT_REGION			"RegionSelectButton"
+DEFINE BTN_SPATIAL_SELECT_BOUNDARY			"BoundarySelectButton"
+
+DEFINE BTN_SPATIAL_SQL_SELECT_SPLIT			"SpatialSqlSelectSplitButton"
+'Spatial Sql Select and Simple Select buttons use same defines as BTN_TABLE_SQL_SELECT and BTN_TABLE_SIMPLE_SELECT
+DEFINE BTN_SPATIAL_INVERT_SELECT			"SpatialSelectionInvertSelectButton"
+DEFINE BTN_SPATIAL_CLEAR_SELECT				"SpatialSelectionClearButton"
+
+DEFINE BTN_SPATIAL_FIND_SPLIT				"SpatialFindSplitButton"
+'Uses same defines under MNU_DROPDOWN_GRP_MAP_FIND for BTN_MAP_FIND_SELECTION,BTN_MAP_FIND_ADDRESS, and BTN_MAP_FIND_MARK
+
+'Spatial Tab Edit Group Defines
+DEFINE BTN_SPATIAL_SET_TARGET				"SetTargetButton"
+DEFINE BTN_SPATIAL_CLEAR_TARGET				"ClearTargetButton"
+
+'Erase Split control
+DEFINE BTN_SPATIAL_ERASE_DROPDOWN			"EraseDropDown"
+DEFINE MNU_DROPDOWN_GRP_ERASE				"SpatialEraseDropDownMenuGroup"
+DEFINE BTN_SPATIAL_ERASE_TARGET				"SpatialEraseTargetButton"
+DEFINE BTN_SPATIAL_ERASE_OUTSIDE			"SpatialEraseOutsideTargetButton"
+
+'Combine Split control
+DEFINE BTN_SPATIAL_COMBINE_DROPDOWN			"CombineDropDown"
+DEFINE MNU_DROPDOWN_GRP_COMBINE				"CombineDropDownMenuGroup"
+DEFINE BTN_SPATIAL_COMBINE_SELECTED			"CombineSelectedObjectsButton"
+DEFINE BTN_SPATIAL_COMBINE_USING_COL		"CombineUsingColumnButton"
+
+'Split control
+DEFINE BTN_SPATIAL_SPLIT_DROPDOWN			"SplitDropDown"
+DEFINE MNU_DROPDOWN_GRP_SPLIT				"SplitDropDownMenuGroup"
+DEFINE BTN_SPATIAL_SPLIT_TARGET				"SplitTargetButton"
+DEFINE BTN_SPATIAL_PLINE_SPLIT				"PolylineSplitButton"
+DEFINE BTN_SPATIAL_PLINE_SPLIT_NODE			"PolylineSplitAtNodeButton"
+
+'Disaggregate
+DEFINE BTN_SPATIAL_DISAGGREGATE				"DisaggregateButton"
+'Group Seperator
+DEFINE SEPERATOR_SPATIAL_EDIT				"RibbonSeparator1"
+
+'Buffer Split control
+DEFINE BTN_SPATIAL_BUFFER_SPLIT				"SpatialBufferSplitButton"
+DEFINE MNU_DROPDOWN_GRP_BUFFER				"SpatialBufferMenuGroup"
+DEFINE BTN_SPATIAL_BUFFER					"SpatialBufferButton"
+DEFINE BTN_SPATIAL_BUFFER_TABLE				"SpatialBufferTableButton"
+DEFINE BTN_SPATIAL_CONVVEX_HULL				"SpatialConvexHullButton"
+
+'Nodes Split control
+DEFINE BTN_SPATIAL_NODES_SPLIT				"NodesSplitButton"
+DEFINE MNU_DROPDOWN_GRP_NODES				"NodesSplitButtonMenuGroup"
+DEFINE BTN_SPATIAL_SNAP2NODES				"SnapToNodeButton"
+DEFINE BTN_SPATIAL_RESHAPE					"ReshapeButton"
+DEFINE BTN_SPATIAL_ADD_NODE					"AddNodeButton"
+DEFINE BTN_SPATIAL_OVERLAY_NODE				"OverlayNodeButton"
+
+'Fix Clean Split control
+DEFINE BTN_SPATIAL_FIX_CLEAN_SPLIT			"FixCleanSplitButton"
+DEFINE MNU_DROPDOWN_GRP_FIX					"FixCleanButtonMenuGroup"
+DEFINE BTN_SPATIAL_CHECK_REGIONS			"CheckRegionsButton"
+DEFINE BTN_SPATIAL_CLEAN					"CleanButton"
+DEFINE BTN_SPATIAL_SNAPTHIN					"SnapButton"
+DEFINE BTN_SPATIAL_SMOOTH					"SmoothButton"
+DEFINE BTN_SPATIAL_UNSMOOTH					"UnsmoothButton"
+
+'Transform Split control
+DEFINE BTN_SPATIAL_TRANSFORM_SPLIT			"TransformSplitButton"
+DEFINE MNU_DROPDOWN_GRP_TRANSFORM			"TransformDropdownMenuGroup"
+DEFINE BTN_SPATIAL_OFFSET					"OffsetObjectButton"
+DEFINE BTN_SPATIAL_ROTATE					"RotateObjectButton"
+
+'Convert to Polyline control
+DEFINE BTN_SPATIAL_CONVERT_TO_PLINE			"SpatialConvertToPolylineButton"
+
+'Clip Region
+DEFINE BTN_SPATIAL_CLIP_DROPDOWN			"ClipRegionDropDown"
+DEFINE MNU_DROPDOWN_GRP_CLIP				"ClipRegionDropDownMenuGroup"
+DEFINE BTN_SPATIAL_CLIP_SETCLIP				"SetClipRegionButton"
+DEFINE BTN_SPATIAL_CLIP_ONOFF				"ClipRegionOnOffButton"
+
+'Digitizer, Clear Map objects
+DEFINE BTN_SPATIAL_SET_DIGITIZER			"DigitizerSetupButton"
+DEFINE BTN_SPATIAL_CLEAR_MAP_OBJS			"SpatialClearMapObjectsButton"
+
+'Spatial Tab Create Group Defines
+'Insert Split control
+DEFINE BTN_SPATIAL_INSERT_SPLIT				"SpatialCreateInsertSplitButton"
+DEFINE MNU_DROPDOWN_GRP_INSERT_PTS_TXT		"InsertPointsandTextMenuGroup"
+DEFINE BTN_SPATIAL_INSERT_SYMBOL			"SpatialCreateInsertSymbolButton"		
+DEFINE BTN_SPATIAL_INSERT_TEXT				"SpatialCreateInsertTextButton"
+
+DEFINE MNU_DROPDOWN_GRP_INSERTLINES			"InsertLinesMenuGroup"
+DEFINE BTN_SPATIAL_INSERT_LINE				"SpatialCreateInsertLineButton"
+DEFINE BTN_SPATIAL_INSERT_PLINE				"SpatialCreateInsertPolylineButton"
+DEFINE BTN_SPATIAL_INSERT_ARC				"SpatialCreateInsertArcButton"
+
+DEFINE MNU_DROPDOWN_GRP_INSERT_REGIONS		"InsertRegionsMenuGroup"
+DEFINE BTN_SPATIAL_INSERT_POLYGON			"SpatialCreateInsertPolygonButton"
+DEFINE BTN_SPATIAL_INSERT_ELLIPSE			"SpatialCreateInsertEllipseButton"
+DEFINE BTN_SPATIAL_INSERT_RECT				"SpatialCreateInsertRectangleButton"
+DEFINE BTN_SPATIAL_INSERT_ROUNDRECT			"SpatialCreateInsertRoundedRectangleButton"
+
+'Spatial Tab Create Group Defines
+'Style Split Control
+DEFINE BTN_SPATIAL_STYLES_SPLIT				"SpatialStylesSplitButton"
+DEFINE MNU_DROPDOWN_GRP_SPATIAL_STYLES		"SpatialStylesMenuGroup"
+DEFINE BTN_SPATIAL_STYLE_SYMBOL				"SpatialCreateSymbolStyleButton"
+DEFINE BTN_SPATIAL_STYLE_LINE				"SpatialCreateLineStyleButton"
+DEFINE BTN_SPATIAL_STYLE_REGION				"SpatialCreateRegionStyleButton"
+DEFINE BTN_SPATIAL_STYLE_TEXT				"SpatialCreateTextStyleButton"
+
+'Spatial Tab Create Group Defines
+'Regions Split Control
+DEFINE BTN_SPATIAL_CREATE_REGIONS_SPLIT		"SpatialCreateRegionsSplitButton"
+DEFINE MNU_DROPDOWN_GRP_SPATIAL_REGIONS		"SpatialCreateRegionsMenuGroup"
+DEFINE BTN_SPATIAL_CONVERT_REGION			"SpatialConvertToRegionButton"
+DEFINE BTN_SPATIAL_ENCLOSE					"SpatialEncloseButton"
+DEFINE BTN_SPATIAL_CREATE_DRIVE_REGIONS		"SpatialCreateDriveRegionsButton"
+DEFINE BTN_SPATIAL_TABLE_DRIVE_REGIONS		"SpatialDriveRegionsTableButton"
+DEFINE BTN_SPATIAL_VORONOI					"SpatialVoronoiButton"
+DEFINE BTN_SPATIAL_TABLE_VORONOI			"SpatialVoronoiTableButton"
+DEFINE BTN_SPATIAL_DRIVETIME_ADDIN			"SpatialCreateDriveTimeAddinButton"
+
+'Spatial Tab Create Group Defines
+'Geocode Split Control
+DEFINE BTN_SPATIAL_GEOCODE_SPLIT			"GeoCodeSplitButton"
+DEFINE MNU_DROPDOWN_GRP_GEOCODE				"GeoCodeSplitButtonDropDownMenuGroup"
+DEFINE BTN_SPATIAL_GEOCODE					"GeoCodeButton"
+DEFINE BTN_SPATIAL_GEOCODE_SERVER			"WebGeoCodeButton"
+DEFINE BTN_SPATIAL_GEOCODE_ADDIN			"GeocodeAddInButton"
+
+'#########################################################################################
+'LAYOUT Tab Control Defines
+'#########################################################################################
+'LAYOUT Tab Groups
+DEFINE TAB_LAYOUT_PAGE_GRP					"LayoutPage"
+DEFINE TAB_LAYOUT_CLIP_GRP					"LayoutClipboard"
+DEFINE TAB_LAYOUT_EDIT_GRP					"LayoutEdit"
+DEFINE TAB_LAYOUT_ARRANGE_GRP				"LayoutArrange"
+DEFINE TAB_LAYOUT_STYLE_GRP					"LayoutStyle"
+
+'New Layout Split Control Gallery with Layout Template AddIn
+DEFINE BTN_LAYOUT_NEW_LAYOUT				"LayoutNewPageButton"
+DEFINE BTN_LAYOUT_PAGE_SETUP				"LayoutPageSetupButton"
+
+'Layout Output Split Control
+DEFINE BTN_LAYOUT_OUTPUT_SPLIT				"OutputSplitButton"
+DEFINE MNU_DROPDOWN_GRP_MODIFY_STYLE_MNU	"ModifyStyleMenuGroup"
+DEFINE BTN_LAYOUT_PRINT						"PrintButton"
+DEFINE BTN_LAYOUT_PRINT_PDF					"PdfButton"
+DEFINE BTN_LAYOUT_EXPORT					"ExportImgButton"
+
+'Layout Clipboard group
+DEFINE BTN_LAYOUT_CLIP_COPY					"CopyButton"
+DEFINE BTN_LAYOUT_CLIP_PASTE				"PasteButton"
+DEFINE BTN_LAYOUT_CLIP_CUT					"CutButton"
+DEFINE BTN_LAYOUT_CLIP_UNDO					"UndoButton"
+DEFINE BTN_LAYOUT_CLIP_REDO					"RedoButton"
+
+'Layout Insert Group
+'Layout Add Map Split control
+DEFINE BTN_LAYOUT_ADDMAP_SPLIT				"AddMapSplitButton"
+DEFINE MNU_LAYOUT_DROPDOWN_GRP_NEW_MAP		"NewMapMenuGroup"
+DEFINE BTN_LAYOUT_ADD_MAP					"AddMapButton"
+DEFINE MNU_LAYOUT_DROPDOWN_GRP_MAPS			"MapsMenuGroup"
+DEFINE MNU_LAYOUT_DROPDOWN_GRP_MAP_FRAMES	"MapFramesMenuGroup"
+'Layout Add legend
+DEFINE BTN_LAYOUT_ADD_MAP_LEGEND			"LayoutAddMapLegendButton"
+
+'Layout Add Browser Split control
+DEFINE BTN_LAYOUT_BROWSER_SPLIT				"AddBrowserSplitButton"
+DEFINE MNU_DROPDOWN_GRP_NEW_BROWSER			"NewBrowserMenuGroup"
+DEFINE BTN_LAYOUT_ADD_BROWSER				"AddBrowserButton"
+DEFINE MNU_LAYOUT_DROPDOWN_GRP_BROWSE		"BrowserMenuGroup"
+DEFINE MNU_LAYOUT_DROPDOWN_GRP_BROWSE_FRMS  "BrowserFramesMenuGroup"
+
+'Layout Insert Text, Image and Scalebar
+DEFINE BTN_LAYOUT_INSERT_TEXT				"LayoutDesignerInsertTextButton"
+DEFINE BTN_LAYOUT_INSERT_IMAGE				"LayoutDesignerInsertImageButton"
+DEFINE BTN_LAYOUT_INSERT_SCALEBAR			"ScaleBarButton"
+
+'Layout Insert Shapes and Symbols split control
+DEFINE BTN_LAYOUT_INSERT_SPLIT				"InsertSplitButton"
+DEFINE MNU_DROPDOWN_GRP_INSERT_SYMB			"InsertSymbolsMenuGroup"
+DEFINE BTN_LAYOUT_INSERT_SYMBOL				"InsertSymbolButton"
+
+DEFINE MNU_DROPDOWN_GRP_INSERT_SHAPES		"InsertShapesMenuGroup"
+DEFINE BTN_LAYOUT_INSERT_LINE				"InsertLineButton"
+DEFINE BTN_LAYOUT_INSERT_PLINE				"InsertPloyLineButton"
+
+DEFINE MNU_DROPDOWN_GRP_INSERT_RECTS		"InsertRectanglesMenuGroup"
+DEFINE BTN_LAYOUT_INSERT_ELLIPSE			"InsertEllipseButton"
+DEFINE BTN_LAYOUT_INSERT_RECTANGLE			"InsertRectangleButton"
+DEFINE BTN_LAYOUT_INSERT_ROUNDRECT			"InsertRoundedRectangleButton"
+DEFINE BTN_LAYOUT_INSERT_POLYGON			"InsertPolygonButton"
+
+'Layout Insert Frames Split control
+DEFINE BTN_DROPDOWN_LAYOUT_FRAMES			"LayoutFramesDropDown"
+DEFINE MNU_DROPDOWN_GRP_LAYOUT_FRAMES		"LayoutFramesDropDownMenuGroup"
+DEFINE BTN_LAYOUT_NEW_EMPTY_FRAME			"NewEmptyFrameButton"
+DEFINE BTN_LAYOUT_REMOVE_FRAME_CONTENTS		"RemoveSelectedFramesContentButton"
+DEFINE BTN_LAYOUT_REMOVE_LAYOUT_ITEMS		"RemoveSelectedLayoutItemsButton"
+
+'Layout Style Group
+'Layout Syle Controls (Font, Symbol, Frame, Color, Line spacing)
+DEFINE BTN_PANEL_LAYOUT_FONT_STYLE			"FontStyleButtonPanel"
+DEFINE BTN_LAYOUT_FONT_STYLE_BOLD			"LayoutBoldButton"
+DEFINE BTN_LAYOUT_FONT_STYLE_ITALIC			"LayoutItalicButton"
+DEFINE BTN_LAYOUT_FONT_STYLE_UNDERLINE		"LayoutUnderlineButton"
+DEFINE BTN_LAYOUT_FONT_STYLE_ALL_CAPS		"LayoutAllCapsButton"
+DEFINE BTN_LAYOUT_FONT_STYLE_EXPAND			"LayoutExpandButton"
+DEFINE BTN_LAYOUT_FONT_STYLE_HALO			"LayoutHaloButton"
+DEFINE BTN_LAYOUT_FONT_STYLE_HIGHLIGHT		"LayoutHighlightButton"
+
+DEFINE BTN_LAYOUT_FONTCOLOR_SPLIT			"FontColorPicker"
+DEFINE BTN_LAYOUT_BACKGRND_COLOR_SPLIT		"BackgroundColorPicker"
+
+DEFINE BTN_LAYOUT_TEXT_JUSTIFY_SPLIT		"TextJustifyMenuGroup"
+DEFINE BTN_LAYOUT_TEXT_JUSTIFY_LEFT			"TextJustifyLeftButton"
+DEFINE BTN_LAYOUT_TEXT_JUSTIFY_RIGHT		"TextJustifyRightButton"
+DEFINE BTN_LAYOUT_TEXT_JUSTIFY_CENTER		"TextJustifyCenterButton"
+
+DEFINE BTN_LAYOUT_DROPDOWN_LINE_SPACE		"LineSpacingDropDown"
+DEFINE MNU_DROPDOWN_GRP_LAYOUT_LINE_SPACING	"LineSpacingMenuGroup"
+DEFINE BTN_LAYOUT_LINE_SPACING_SINGLE		"LineSpacingSingleItem"
+DEFINE BTN_LAYOUT_LINE_SPACING_ONEPLUS		"LineSpacingOnePointFiveItem"
+DEFINE BTN_LAYOUT_LINE_SPACING_DOUBLE		"LineSpacingDoubleItem"
+
+DEFINE STK_PANEL_LAYOUT_FRAME_ROTATE		"LayoutFrameRotationStackPanel"
+DEFINE BTN_LAYOUT_FRAME_STYLE				"LayoutFrameStyleButton"
+DEFINE BTN_LAYOUT_MODIFY_STYLE_SPLIT		"LayoutModifyStyleSplitButton"
+DEFINE MNU_DROPDOWN_GRP_LAYOUT_MOD_STYLE	""
+DEFINE BTN_LAYOUT_SYMBOL_STYLE				"LayoutSymbolStyleButton"
+DEFINE BTN_LAYOUT_LINE_STYLE				"LayoutLineStyleButton"
+DEFINE BTN_LAYOUT_REGION_STYLE				"LayoutRegionStyleButton"
+
+'Layout Edit Group
+'Layout Reorder DropDown Control
+DEFINE BTN_DROPDOWN_LAYOUT_REORDER			"LayoutReorderDropDownButton"
+DEFINE MNU_DROPDOWN_GRP_LAYOUT_REORDER		"ReorderMenuGroup"
+DEFINE BTN_LAYOUT_BRING_FRONT				"LayoutBringToFrontButton"
+DEFINE BTN_LAYOUT_SEND_BACK					"LayoutSendToBackButton"
+
+'Layout Alignment DropDown Control
+DEFINE BTN_DROPDOWN_LAYOUT_GUIDE			"GuideDropDown"
+DEFINE MNU_DROPDOWN_GRP_LAYOUT_GUIDE		"GuidelineMenuGroup"
+DEFINE BTN_LAYOUT_GUIDELINE_VERTICAL		"VerticalGuidelineButton"
+DEFINE BTN_LAYOUT_GUIDELINE_HORIZONTAL		"HorizontalGuidelineButton"
+DEFINE BTN_LAYOUT_GUIDELINE_DISABLE			"DisableGuidelinesButton"
+DEFINE BTN_LAYOUT_GUIDEKINE_REMOVE			"RemoveGuidelinesButton"
+DEFINE BTN_LAYOUT_TOGGLE_SMARTGUIDES		"ToggleSmartGuidesItem"
+
+DEFINE MNU_DROPDOWN_GRP_LAYOUT_GRID			"GridGroup"
+DEFINE CMNU_LAYOUT_SHOW_GRID				"LayoutGridlinesButton"
+DEFINE CMNU_LAYOUT_SNAP_GRID				"SnapToGridButton"
+DEFINE MNU_LAYOUT_GRIDSIZE					"GridSizeSubMenu"
+
+DEFINE MNU_DROPDOWN_GRP_LAYOUT_SNAP_GRID	"GridSnapMenuGroup"
+DEFINE CMNU_LAYOUT_SNAP_GRID_LEFT			"SnapToLeftButton"
+DEFINE CMNU_LAYOUT_SNAP_GRID_ALIGN_HORIZ	"AlignHorizontalCenterButton"
+DEFINE CMNU_LAYOUT_SNAP_GRID_RIGHT			"SnapToRightButton"
+DEFINE CMNU_LAYOUT_SNAP_GRID_TOP			"SnapToTopButton"
+DEFINE CMNU_LAYOUT_SNAP_GRID_ALIGN_VERT		"AlignVerticalCenterButton"
+DEFINE CMNU_LAYOUT_SNAP_GRID_BOTTOM			"SnapToBottomButton"
+DEFINE CMNU_LAYOUT_SNAP_GRID_DIST_HORIZ		"DistHorizontallyButton"
+DEFINE CMNU_LAYOUT_SNAP_GRID_DIST_VERT		"DistVerticallyButton"
+
+DEFINE BTN_LAYOUT_SELECT					"LayoutSelectButton"
+
+'Layout Tools DropDown Control
+DEFINE BTN_LAYOUT_TOOLS_SPLIT				"ToolsDropDown"
+DEFINE MNU_DROPDOWN_GRP_LAYOUT_TOOLS		"ToolsGroup"
+DEFINE BTN_LAYOUT_PAN						"LayoutPanButton"
+DEFINE BTN_LAYOUT_ZOOMIN					"LayoutZoomInButton"
+DEFINE BTN_LAYOUT_ZOOMOUT					"LayoutZoomOutButton"
+
+'#########################################################################################
+'Legend Context TAB Controls
+'#########################################################################################
+
+'Legend Tools Context Tab Groups
+DEFINE LEGEND_CONTENT_GRP					"ContentPage"
+DEFINE LEGEND_ALIGN_PAGE_GRP				"AlignmentPage"
+
+'Legend Refresh Split Control
+DEFINE BTN_LEGEND_REFRESH_SPLIT				"LegendRefreshSplitButton"
+DEFINE MNU_DROPDOWN_GRP_LEG_REFRESH			"LegendRefreshSplitButtonGroup"
+DEFINE BTN_LEGEND_REFRESH_QUICK				"LegendQuickRefreshButton"
+DEFINE BTN_LEGEND_REFRESH_ALL				"LegendRefreshAllButton"
+
+DEFINE BTN_LEGEND_MODIFY_THEME				"LegendModifyThemeButton"
+DEFINE BTN_LEGEND_MODIFY_LEGEND				"LegendModifyLegendButton"
+DEFINE BTN_LEGEND_ADD_LEGEND				"LegendAddLegendButton"
+
+'Legend Guide Dropdown
+DEFINE BTN_LEGEND_GUIDE_SPLIT				"GuideDropDown"
+DEFINE MNU_DROPDOWN_GRP_LEG_GUIDE			"GuidelineMenuGroup"
+DEFINE BTN_LEGEND_VERTICAL_GUIDE			"VerticalGuidelineButton"
+DEFINE BTN_LEGEND_HORIZONTAL_GUIDE			"HorizontalGuidelineButton"
+DEFINE BTN_LEGEND_DISABLE_GUIDES			"DisableGuidelinesButton"
+DEFINE BTN_LEGEND_REMOVE_GUIDES				"RemoveGuidelinesButton"
+
+DEFINE BTN_LEGEND_SNAP_LEFT					"SnapToLeftButton"
+DEFINE BTN_LEGEND_SNAP_BOTTOM				"SnapToBottomButton"
+DEFINE BTN_LEGEND_SNAP_TOP					"SnapToTopButton"
+DEFINE BTN_LEGEND_SNAP_RIGHT				"SnapToRightButton"
+
+DEFINE BTN_LEGEND_GRID_LINES				"LegendGridLinesButton"
+DEFINE BTN_LEGEND_GRID_SNAP					"LegendSnapToGridButton"
+DEFINE STK_PANEL_LEGEND_GRID_SIZE			"LegendGridSizeStackPanel"
+DEFINE CBO_LEGEND_GRID_SIZE					"LegendGridSizeComboBox"
+
+'#########################################################################################
+'Layer Style Context Tab Controls
+'#########################################################################################
+DEFINE LAYER_STYLE_GRP						"LayerStyleStyle"
+'Layer Style Group controls
+DEFINE BTN_LAYER_STYLE_OVERRIDE				"LayerStyleOverrideButton"
+DEFINE BTN_LAYER_STYLE_STACKED				"LayerStyleStackedButton"
+DEFINE BTN_LAYER_STYLE_REGION				"LayerRegionStyleButton"
+DEFINE BTN_LAYER_STYLE_LINE					"LayerLineStyleButton"
+DEFINE BTN_LAYER_STYLE_SYMBOL				"LayerSymbolStyleButton"
+DEFINE BTN_LAYER_STYLE_TEXT					"LayerTextStyleButton"
+DEFINE STK_PANEL_LAYER_SYMBOL_ROTATE		"LayerSymbolRotationStackPanel"
+DEFINE STK_PANEL_LAYER_SYMBOL_ROTATE_VAL	"LayerSymbolRotationValuePanel"
+	
+DEFINE LAYER_STYLE_GRP_TRANSLUCENT			"LayerStyleTranslucency"
+DEFINE STK_PANEL_LAYER_TRANSLUCENCY			"LayerStyleTranslucencyStackPanel"
+
+DEFINE LAYER_STYLE_GRP_IMAGE_STYLE			"LayerStyleImageStyles"
+DEFINE STK_PANEL_IMAGE_STYLE				"LayerStyleImageStylesStackPanel"
+DEFINE BTN_LAYER_IMAGE_STYLE_GRAYSCALE		"ImageStyleGrayScaleButton"
+
+DEFINE LAYER_STYLE_GRP_DISPLAY				"LayerStyleDisplay"
+DEFINE BTN_LAYER_STYLE_SHOW_NODES			"LayerStyleShowNodesButton"
+DEFINE BTN_LAYER_STYLE_SHOW_CENTROIDS		"LayerStyleShowCentroidsButton"
+DEFINE BTN_LAYER_STYLE_SHOW_LINE_DIR		"LayerStyleShowLineDirectionButton"
+
+'#########################################################################################
+'Layer Label Context Tabs Controls
+'#########################################################################################
+DEFINE LAYER_LABEL_CONTENT_GRP				"LabelContent"
+
+DEFINE LAYER_LABEL_PLACEMENT_GRP			"LabelPlacement"
+DEFINE BTN_LABEL_RULES_SPLIT				"LabelRulesSplitButton"
+
+DEFINE MNU_DROPDOWN_GRP_LBL_RULES_REGION	"LabelRulesRegionsMenuGroup"
+DEFINE STK_PANEL_LABEL_REGION_RULES			"RegionLabelRuleStackPanel"
+DEFINE STK_PANEL_LABEL_REGION_RULE1			"RegionLabelRule1"
+DEFINE BTN_LABEL_RULES_AUTO_STYLE			"LabelRulesAutoStyleButton"
+DEFINE BTN_LABEL_RULES_AUTO_STYLE_CALLOUT	"LabelRulesAutoStyleWithCallOutButton"
+DEFINE BTN_LABEL_RULES_AUTO_STYLE_OVERFLOW	"LabelRulesAutoStyleWithOverflowButton"
+
+DEFINE STK_PANEL_REGION_LABEL_RULE			"RegionLabelRuleStackPanel"
+DEFINE STK_PANEL_REGION_LABEL1				"RegionLabelRule1"
+DEFINE BTN_LABEL_REGION_STYLE_AUTO_STYLE	"LabelRulesAutoStyleButton"
+DEFINE BTN_LABEL_REGION_STYLE_AUTO_CALLOUT	"LabelRulesAutoStyleWithCallOutButton"
+DEFINE BTN_LABEL_REGION_STYLE_AUTO_OVERFLOW	"LabelRulesAutoStyleWithOverflowButton"
+DEFINE STK_PANEL_AUTOSIZE_STEP				"AutoSizeStepPanel"
+DEFINE SLIDER_LABEL_AUTOSIZE_STEP			"AutoSizeStepSlider"
+DEFINE SLIDER_LABEL_AUTOSIZE_STEP_LABEL		"AutoSizeStepLabel"
+
+DEFINE STK_PANEL_REGION_LABEL2				"RegionLabelRule2"
+DEFINE BTN_LABEL_REGION_AUTO_POS			"LabelRulesAutoPosButton"
+DEFINE BTN_LABEL_REGION_AUTO_POS_CALLOUT	"LabelRulesAutoPosWithCallOutButton"
+DEFINE BTN_LABEL_REGION_AUTO_POS_OVERFLOW	"LabelRulesAutoPosWithOverflowButton"
+DEFINE STK_PANEL_AUTOSIZE					"AutoSizePanel"
+DEFINE SLIDER_LABEL_AUTOSIZE				"AutoSizeSlider"
+
+DEFINE STK_PANEL_REGION_LABEL3				"RegionLabelRule3"
+DEFINE BTN_LABEL_REGION_CENTROID			"LayerRulesRegionLabelCentroidButton"
+
+DEFINE MNU_DROPDOWN_GRP_LBL_RULE_LINES		"LabelRulesLinesMenuGroup"
+DEFINE STK_PANEL_LINE_LBL_RULE				"LineRuleStackPanel"
+DEFINE STK_PANEL_CURVED_RULES				"CurvedRules"
+DEFINE BTN_LABEL_LINE_CURVE_DEFAULT			"LayerLineLabelCurvedDefaultButton"
+DEFINE BTN_LABEL_LINE_CURVE_FALLBACK		"LayerLineLabelCurvedWithFallbackButton"
+DEFINE STK_PANEL_LINE_LABEL_OVERHANG		"OverhangPanel"
+DEFINE SLIDER_LINE_LABEL_OVERHANG			"OverhangSlider"
+
+DEFINE STK_PANEL_REMAINING_RULES			"RemainingRuleStackPanel"
+DEFINE BTN_LABEL_LINE_ROTATED				"LayerLineLabelRotatedButton"
+DEFINE BTN_LABEL_LINE_HORIZONTAL			"LayerLineLabelHorizontalButton"
+
+DEFINE MNU_DROPDOWN_GRP_LBL_RULE_POINTS		"LabelRulesPointsMenuGroup"
+DEFINE BTN_LABEL_POINTS_DEFAULT				"LayerPointsLabelDefaultButton"
+
+DEFINE STK_PANEL_LABEL_POSITION				"LabelPositionStackPanel"
+DEFINE GALLERY_LABEL_POSITION				"LabelPositionGallery"
+DEFINE GALLERY_CTRL_LABEL_POS_GRPS			"Groups"
+DEFINE GALLERY_GRP_LABEL_POS_TOP			"LabelPosTop"
+DEFINE GALLERY_LABEL_POS_TOPLEFT			"LabelPosTopLeft"
+DEFINE GALLERY_LABEL_POS_TOPCENTER			"LabelPosTopCenter"
+DEFINE GALLERY_LABEL_POS_TOPRIGHT			"LabelPosTopRight"
+DEFINE GALLERY_GRP_LABEL_POS_CENTER			"LabelPosCtr"
+DEFINE GALLERY_LABEL_POS_CTRLEFT			"LabelPosCtrLeft"
+DEFINE GALLERY_LABEL_POS_CTRCENTER			"LabelPosCtrCenter"
+DEFINE GALLERY_LABEL_POS_CTRRIGHT			"LabelPosCtrRight"
+DEFINE GALLERY_GRP_LABEL_POS_BOTTOM			"LabelPosBottom"
+DEFINE GALLERY_LABEL_POS_BOTLEFT			"LabelPosBottomLeft"
+DEFINE GALLERY_LABEL_POS_BOTCENTER			"LabelPosBottomCenter"
+DEFINE GALLERY_LABEL_POS_BOTRIGHT			"LabelPosBottomRight"
+DEFINE GALLERY_CTRL_LABEL_MENUS				"MenuItems"
+
+DEFINE STK_PANEL_LABEL_OFFSET				"LabelOffsetPanel"
+DEFINE TEXTBOX_OFFSET_VALUE					"OffsetTextBox"
+
+DEFINE BTN_LABEL_OVERLAP_DROPDOWN			"LabelOverlapDownButton"
+DEFINE MNU_DROPDOWN_GRP_LBL_OVERLAP			"LabelOverlapDropDownMenuGroup"
+DEFINE MNU_DISCARD_OVERLAP					"DiscardOverlapMenuItem"
+DEFINE MNU_ALLOW_OVERLAP					"AllowOverlapMenuItem"
+DEFINE MNU_POSITION_RETRY					"PositionRetryMenuItem"
+
+DEFINE CHK_ALLOW_DUPLICATES					"AllowDupCheckBox"
+DEFINE CHK_LABEL_PARTIAL_OBJS				"LblPartialObjCheckBox"
+
+DEFINE STK_PANEL_LABEL_LINE					"LabelOffsetPanel"
+DEFINE BTN_LABEL_LINE_DROPDOWN				"LabelLineLeaderDropDown"
+DEFINE MNU_DROPDOWN_GRP_LABEL_LEADER		"LabelLeaderDropDownMenuGroup"
+DEFINE MNU_LABEL_LINE_NONE					"NoneLineStyMenuItem"
+DEFINE MNU_LABEL_LINE_SIMPLE				"SimpleLineStMenuItem"
+DEFINE MNU_LABEL_LINE_ARROW					"ArrowLineStyMenuItem"
+DEFINE BTN_LABEL_LINE_STYLE					"LabelLineStyleButton"
+
+'Label Preview Group
+DEFINE BTN_LAYER_LABEL_PREVIEW				"LabelPreviewButton" 
+
+'#########################################################################################
+'Layer Theme Context Tab Controls
+'#########################################################################################
+'Theme Context Tab Ribbon Groups
+DEFINE THEME_FILE_GRP					"FileBar"
+DEFINE THEME_RANGED_STYLE_GRP			"RangedStyleBar"
+DEFINE THEME_PIECHART_STYLE_GRP			"PieChartStyleBar"
+DEFINE THEME_GRADSYMBOL_STYLE_GRP		"GraduatedSymbolStyleBar"
+DEFINE THEME_BARCHART_STYLE_GRP			"BarChartStyleBar"
+DEFINE THEME_DOTDENSITY_STYLE_GRP		"DotDensityStyleBar"
+DEFINE THEME_INDVAL_STYLE_GRP			"IndividualValueStyleBar"
+DEFINE THEME_CUSTOM_STYLE_GRP			"CustomizeStyleBar"
+
+'Theme Context Tab File Group
+DEFINE BTN_SAVE_THEME_TEMPLATE			"SaveThemeTemplateButton"
+DEFINE BTN_SAVE_DEFAULT_THEME			"SaveAsDefaultThemeButton"
+DEFINE BTN_REMOVE_DEFAULT_THEME			"RemoveDefaultThemeButton"
+DEFINE BTN_RECALC_THEME					"RescanThemeDataButton"
+
+'Theme Context Tab Ranged Style Group
+DEFINE BTN_DROPDOWN_RANGED_THM_METH		"ThemeRangedMethodDropDownButton"
+DEFINE BTN_RANGE_COLOR_BREWER			"RangeColorBrewerButton"
+DEFINE MNU_DROPDOWN_GRP_RANGE_STYLE		"StyleDownMenuGroup"
+
+'Theme Context Tab Pie Charts Style Group
+DEFINE BTN_DROPDOWN_PIECHART_TYPE		"PieChartTypeButton"
+DEFINE BTN_PIECHART_TYPE_WHOLE			"ChartTypeWholePiesButton"
+DEFINE BTN_PIECHART_TYPE_HALF			"ChartTypeHalfPiesButton"
+DEFINE BTN_DROPDOWN_PIECHART_METH		"ChartMethod"
+DEFINE BTN_PIECHART_METHOD_SQ_ROOT		"GraduationSqRootButton"
+DEFINE BTN_PIECHART_METHOD_CONST		"GraduationConstantButton"
+DEFINE BTN_PIECHART_METHOD_LOG			"GraduationLogButton"
+DEFINE BTN_PIECHART_METHOD_NONE			"GraduationNoneButton"
+
+'Theme Context Tab Graduated Symbol Style Group
+DEFINE BTN_DROPDOWN_SYMBOL_METHOD		"SymbolMethodDropDownButton"
+DEFINE BTN_SYMBOL_METHOD_SQ_ROOT		"SymbolMethodSquareRootRibbonButton"
+DEFINE BTN_SYMBOL_METHOD_CONST			"SymbolMethodConstantRibbonButton"
+DEFINE BTN_SYMBOL_METHOD_LOG			"SymbolMethodLogRibbonButton"
+DEFINE BTN_SYMBOL_POSITIVE				"PositiveSymbolRibbonButton"
+DEFINE BTN_SYMBOL_NEGATIVE				"NegativeSymbolRibbonButton"
+DEFINE CHK_SYMBOL_SHOW_NEGATIVE			"ShowNegativeValuesRibbonCheckBox"
+
+'Theme Context Tab Bar Charts Style Group
+DEFINE BTN_DROPDOWN_BARCHART_TYPE		"BarChartTypeDropDownButton"
+DEFINE BTN_BARCHART_STACKED				"BarStackedRibbonButton"
+DEFINE BTN_BARCHART_GRADUATED			"BarStackedGraduatedRibbonButton"
+DEFINE BTN_BARCHART_MULTI				"BarMultipleRibbonButton"
+DEFINE BTN_BARCHART_MULTI_IND			"BarMultipleIndependentScaleRibbonButton"
+DEFINE BTN_DROPDOWN_BARCHART_METHOD		"BarMethodDropDownButton"
+DEFINE BTN_BARCHART_METHOD_SQ_ROOT		"BarMethodSquareRootRibbonButton"
+DEFINE BTN_BARCHART_METHOD_CONST		"BarMethodConstantRibbonButton"
+DEFINE BTN_BARCHART_METHOD_LOG			"BarMethodLogRibbonButton"
+
+'Theme Context Tab Dot Density Style Group
+DEFINE BTN_DROPDOWN_DOTDENSITY_TYPE		"DotDensityChartTypeDropDownButton"
+DEFINE BTN_DOTDENSITY_CIRCLE			"DotDensityCicleRibbonButton"
+DEFINE BTN_DOTDENSITY_SQUARE			"DotDensitySquareRibbonButton"
+DEFINE BTN_DROPDOWN_DOTDENSITY_COL		"DotDensityColorDropDownButton"
+DEFINE MNU_DROPDOWN_GRP_DOT_COLOR		"DotDensityColorDropDownMenuGroup"
+
+'Theme Context Tab Individual Value Style Group
+DEFINE BTN_DROPDOWN_INDVAL_COLOR		"IndividualColorBrewerButton"
+DEFINE MNU_DROPDOWN_GRP_INDVAL_COL		"IndividualStyleDownMenuGroup"
+
+'#########################################################################################
+'Map Mini toolbar, Backstage, and StatusBar controls
+'#########################################################################################
+
+DEFINE MAP_MINI_TOOLBAR					"MapMiniToolbar"
+DEFINE STK_PANEL_MAP_TB_TOOLS0			"MapTools0"
+DEFINE BTN_MAP_TB_PAN					"PanButton"
+DEFINE BTN_MAP_TB_SELECT_SPLIT			"MapSelectionToolsSplitButton"
+DEFINE MNU_MAP_TB_DROPDOWN_GRP_SELECT	"SelectionDownMenuGroup"
+DEFINE BTN_MAP_TB_SELECT				"SelectButton"
+DEFINE BTN_MAP_TB_RADIUS_SELECT			"RadiusSelectButton"
+DEFINE BTN_MAP_TB_MARQUEE_SELECT		"MaqueeSelectButton"
+DEFINE BTN_MAP_TB_REGION_SELECT			"RegionSelectButton"
+DEFINE BTN_MAP_TB_BOUNDARY_SELECT		"BoundarySelectButton"
+DEFINE BTN_MAP_TB_CLEAR_SELECT			"SelectionClearButton"
+
+DEFINE STK_PANEL_MAP_TB_TOOLS1			"MapTools1"
+DEFINE BTN_MAP_TB_ZOOM_IN				"ZoomInButton"
+DEFINE BTN_MAP_TB_ZOOM_OUT				"ZoomOutButton"
+
+DEFINE STK_PANEL_MAP_TB_TOOLS2			"MapTools2"
+DEFINE BTN_MAP_TB_INFO_TOOL				"InfoToolButton"
+DEFINE BTN_MAP_TB_RULER					"MeasureButton"
+
+DEFINE STK_PANEL_MAP_TB_TOOLS3			"MapTools3"
+DEFINE BTN_MAP_TB_COLOR_PICK_SPLIT		"ColorPickerSplitButton"
+DEFINE BTN_MAP_TB_LABEL_TOOL			"LabelToolButton"
+
+DEFINE STK_PANEL_MAP_TB_TOOLS4			"MapTools4"
+DEFINE STK_PANEL_MAP_TB_FONT_STYLE		"FontButtonPanel"
+DEFINE BTN_MAP_TB_FONT_BOLD				"BtnBold"
+DEFINE BTN_MAP_TB_FONT_HALO				"BtnHalo"
+DEFINE BTN_MAP_TB_FONT_ITALICS			"BtnItalics"
+DEFINE BTN_MAP_TB_FONT_UNDERLINE		"BtnUnderline"
+DEFINE BTN_MAP_TB_FONT_ALLCAPS			"BtnAllCaps"
+
+DEFINE STK_PANEL_MAP_TB_TOOLS5			"MapTools5"
+DEFINE STK_PANEL_MAP_TB_FONT_SIZE		"FontSizeChildrenPanel"
+DEFINE BTN_MAP_TB_ADD_NODE				"AddNodeButton"
+DEFINE BTN_MAP_TB_RESHAPE_MODE			"ReShapeModeButton"
+
+'StatusBar
+DEFINE STATUS_BAR						"StatusBar"
+DEFINE SB_MAPPER_VIEW					"StMapperView"
+DEFINE SB_MAP_POPUP						"StMapperPopUpImage"
+DEFINE SB_MAP_LAYER						"StMapperLayer"
+DEFINE SB_EDIT_LAYER_POPUP				"StEditLayerPopUpImage"
+DEFINE SB_SELECTED						"StSelected"
+DEFINE SB_PROJ							"StProjection"
+DEFINE SB_DIGIT							"StDigitizer"
+DEFINE SB_SNAP							"StSnap"
+DEFINE SB_AUTOTRACE						"StAutotrace"
+DEFINE SB_AUTONODE						"StAutonode"
+DEFINE SB_MINI_TBAR_CUST 				"StMiniToolbarCustomizations"
+DEFINE SB_MINI_TBAR_POPUP 				"StMiniToolbarPopUpImage"
+DEFINE SB_CURRENT_WOR					"CurrentWorkSpacePanel"
+DEFINE SB_BACKGROUND_TASK				"StBackgroundTsk"
+DEFINE SB_CELL_VALUE_STATUS				"CellValueStatus"
+DEFINE SB_CUSTOM_ITEM					"CustomStatusBarItem"
+DEFINE SB_PROGRESS_BAR					"ProgressBar"
+
+'Backstage area
+DEFINE RIBBON_BACKSTAGE					"RibbonBackStage"
+DEFINE TAB_ITEM_BACKSTAGE_ABOUT	 		"BackStageTabItemAbout"
+DEFINE TAB_ITEM_BACKSTAGE_WELCOME 		"BackStageTabItemWelcome"
+DEFINE TAB_ITEM_BACKSTAGE_LICENSE	 	"BackStageTabItemLicense"
+DEFINE TAB_ITEM_BACKSTAGE_LIAPI		 	"LiApiBackStageTabItem"
+DEFINE TAB_ITEM_BACKSTAGE_ADDINS	 	"BackStageTabItemAddins"
+DEFINE BACKSTAGE_SEPERATOR	 			"BackStageSeperator"
+DEFINE TAB_ITEM_BACKSTAGE_OPTIONS	 	"BackStageTabItemOptions"
+
+DEFINE WRAP_PANEL_SYSTEM				"SystemWrapPanel"
+DEFINE BTN_SYSTEM_PREFS					"SystemPreferences"
+DEFINE BTN_STYLES_PREFS					"StylesPreferences"
+DEFINE BTN_STARTUP_PREFS				"StartUpPreferences"
+DEFINE BTN_CUSTOM_COLORS_PREFS			"CustomColors"
+DEFINE BTN_PATH_PREFS					"PathPreferences"
+DEFINE BTN_COUNTRY_PREFS				"CountryPreferences"
+DEFINE BTN_WEBSERVICES_PREFS			"WebservicesPreferences"
+DEFINE BTN_IMAGE_PROCESS_PREFS			"ProcImagePreferences"
+DEFINE BTN_PERFORMANCE_PREFS			"PerformancePreferences"
+DEFINE BTN_NOTIFY_PREFS					"NotificationsPreferences"
+DEFINE BTN_WINDOW_STATE_PREFS			"WindowStatePreferences"
+DEFINE BTN_WORKSPACE_PREFS				"WorkspacePreferences"
+
+DEFINE WRAP_PANEL_WINDOW				"WindowWrapPanel"
+DEFINE BTN_MAP_PREFS					"MapPreferences"
+DEFINE BTN_BROWSER_PREFS				"BrowserPreferences"
+DEFINE BTN_EXPLORER_PREFS				"ExplorerPreferences"
+DEFINE BTN_LEGEND_PREFS					"LegendPreferences"
+DEFINE BTN_LAYER_CTRL_PREFS				"LayerControlPreferences"
+DEFINE BTN_MAPBASIC_PREFS				"MapBasicWindowPreferences"
+DEFINE BTN_TASK_MGR_PREFS				"TaskManagerPreferences"
+DEFINE BTN_WINDOWLIST_PREFS				"WindowListPreferences"
+DEFINE BTN_LAYOUT_PREFS					"LayoutPreferences"
+
+DEFINE WRAP_PANEL_DEVICES				"DevicesWrapPanel"
+DEFINE BTN_PRINTER_PREFS				"PrinterPreferences"
+DEFINE BTN_OUTPUT_PREFS					"OutputPreferences"
+
+DEFINE WRAP_PANEL_ADDIN					"AddinWrapPanel"
+DEFINE BTN_ADDIN						"AddInButton"
+
+DEFINE WRAP_PANEL_CUSTOM				"CustomGroup"
+DEFINE BTN_CUSTOM_GROUP_PREFS			"CustomGroup"
+
+DEFINE BTN_BACKSTAGE_EXIT	 			"BackStageButtonExit"
+
+'NOTE: Control names for Window Context MENUS are created at run-time, so not included in Def file

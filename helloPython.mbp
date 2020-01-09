@@ -1,0 +1,4 @@
+[link]
+Application = HelloPython.mbx
+module=helloPython.mbo
+Module=MAPBASIC\Lib\ResStrng.mbo

@@ -1,0 +1,110 @@
+'*****************************************************************************
+'       Copyright 2019 Pitney Bowes Software Inc.
+'       All rights reserved.
+'****************************************************************************/
+Include "MAPBASIC\Inc\mapbasic.def"
+Include "MAPBASIC\Inc\IMapInfoPro.def"
+Include "MAPBASIC\Inc\ResStrng.def"
+
+' Declare method from Pro assembly
+' see IMapInfoPro.def for all defines
+
+Declare Sub EndHandler 
+Declare Sub Main
+
+Declare Sub AddIn_About
+Declare Sub AddIn_Help
+Declare Sub AddIn_DefaultCommand
+Declare Function AddIn_Name() As String 
+Declare Function AddIn_Description() As String 
+Declare Function AddIn_ImageUri() As String 
+Declare Function AddIn_Version() As String
+Declare Function AddIn_AssemblyName() As String
+Declare Function AddIn_ClassName() As String
+Declare Sub FromPython
+
+Global mapinfoApplication as This
+Global mbAddIn as This
+
+Sub Main
+	onerror goto ErrorTrap
+
+		if (SystemInfo(SYS_INFO_MIPLATFORM) = MIPLATFORM_WIN64) then
+			if (SystemInfo(SYS_INFO_MAPINFO_INTERFACE) = MIINTERFACE_RIBBON) then
+				goto ContinueSample
+			end if
+		end if
+
+	InvalidScenario:
+		Note "This sample can only work with 64-bit Ribbon Interface UX."
+		goto Done
+	ContinueSample:
+
+	If LoadStrings((ApplicationDirectory$() + "helloPython.str")) = FALSE Then
+		Note GetResString(IDS_Res_Load_Error) + ApplicationDirectory$() + "helloPython.str"
+		Exit Sub
+	End If
+
+	mapinfoApplication = SYSTEMINFO(SYS_INFO_IMAPINFOAPPLICATION)
+	mbAddIn = New_PythonCustomFrameAddin()
+	
+	if mbAddIn <> 0 Then
+		call InitializePyAddin(mbAddIn, mapinfoApplication, ApplicationDirectory$() + ApplicationName$())
+	End if
+	
+	Done:
+	Exit Sub
+	
+	ErrorTrap:
+		Note "Main: " + Str$(err()) + ": " + Error$()
+		Resume done
+
+End Sub 
+
+Sub EndHandler
+	If mapinfoApplication <> 0 and mbAddIn <> 0 Then
+		call UnloadPyAddin(mbAddIn)
+	End If
+	mbAddIn = NULL_PTR
+	mapinfoApplication = NULL_PTR
+End Sub 
+
+Function AddIn_Name() As String
+	AddIn_Name = GetResString(1)
+End Function
+
+Function AddIn_Description() As String
+	AddIn_Description = GetResString(1)
+End Function
+
+ Sub AddIn_About
+	Note GetResString(1)
+ End Sub
+
+Function AddIn_Version() As String
+	AddIn_Version = GetResString(2)
+End Function
+
+Sub AddIn_Help
+	Note GetResString(1)
+End Sub
+
+Sub AddIn_DefaultCommand
+	Note GetResString(1)
+End Sub
+
+Function AddIn_ImageUri() As String
+	AddIn_ImageUri = "pack://application:,,,/MapInfo.StyleResources;component/Images/Application/about_32x32.png"
+End Function
+
+Sub FromPython
+	print GetResString(3)
+End Sub
+
+Function AddIn_AssemblyName() As String
+	Addin_AssemblyName = "MapInfo.Types"
+End Function
+
+Function AddIn_ClassName() As String
+	Addin_ClassName = "MapInfo.Types.PythonCustomFrameAddinLoader"
+End Function
