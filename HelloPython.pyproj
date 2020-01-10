@@ -5,8 +5,7 @@
     <ProjectGuid>cf1448bf-3175-4193-98b4-9bdd2e970736</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>HelloPython.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>C:\Program Files\MapInfo\Professional;py_addin_util</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>HelloPython</Name>
@@ -22,6 +21,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="HelloPython.py" />
+    <Compile Include="helloPython_customframe.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

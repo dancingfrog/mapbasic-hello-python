@@ -36,52 +36,7 @@ from mi_addin_util import AddinUtil
 from mi_addin_layout_customframe_util import LayoutCustomFrameUtil
 from mi_addin_resourceManager import StringResourceManager
 from helloPython_customframe import CustomFrameControl
-from MapInfo.Types import IMapInfoPro, ControlType, PaperUnits, DimensionedValue, NotificationObject, NotificationType
-from System.Windows import Size, Point
-from System import Double
 
-
-# this class is needed with same name in order to load the python addin and can be copied 
-# as it is when creating another addin.
-class MyAddin():
-    def __init__(self, imapinfopro, thisApplication):
-        try:
-            self._view_file = join(dirname(__file__), "helloPython_customframe_view.xaml")
-            self._pro = imapinfopro
-            self._thisApplication = thisApplication
-            self._stringResourceManager = StringResourceManager(thisApplication)
-
-            CommonUtil.sprint("loading...")
-            self._newTab = self._pro.Ribbon.Tabs.Add(self.get_resource_string(4))
-
-            if thisApplication:
-                # this is how we can call a mbx application subroutine from python.
-                thisApplication.CallMapBasicSubroutine("FromPython", None)
-                CommonUtil.do("""
-print "Hello from (MapBasic code inside) Python Addin!"
-                """)
-            
-            # don't use end mapinfo mapbasic statement in python instead use CommonUtil.end_application().
-            # CommonUtil.end_application()
-
-        except Exception as e:
-            CommonUtil.sprint("Failed to load: {}".format(e))
-
-    def get_resource_string(self, id) -> str:
-        if self._stringResourceManager:
-            return self._stringResourceManager.GetResourceString(id)
-
-    def unload(self):
-        CommonUtil.sprint("unloading...")
-        
-        if self._newTab:
-            self._pro.Ribbon.Tabs.Remove(self._newTab)
-        if self._stringResourceManager:
-            del self._stringResourceManager
-        self._stringResourceManager = None
-        self._newTab = None
-        self._thisApplication = None
-        self._pro = None
 
 class main():
     def __init__(self, imapinfopro):
